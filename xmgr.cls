@@ -142,7 +142,38 @@
 Ja, niżej podpisany(a) oświadczam, iż przedłożona praca 
 dyplomowa została wykonana przeze mnie samodzielnie, 
 nie narusza praw autorskich, interesów prawnych 
-i~materialnych innych osób.\endgraf }
+i~materialnych innych osób. Określenie indywidualnego wkładu w pracę każdego z członków zespołu:
+
+\begin{enumerate} 
+	\item Rafał Kulaszewicz:
+	\begin{itemize}
+		\item komunikacja z ESP za pomocą JSON,
+		\item routing aplikacji,
+		\item baza danych oraz łączenie z aplikacją,
+		\item wysyłanie wiadomości SMS w celu potwierdzenia rejestracji,
+		\item autoryzacja konta użytkownika,
+		\item dodawanie i walidacja dodawanego urządzenia,
+		\item zaprogramowanie mikrokontrolera ESP8266,
+		\item połączenie przekaźnika z listwą zasilającą oraz ESP8266,
+	\end{itemize}
+	\item Ewelina Mazur:
+	\begin{itemize}
+		\item rejestracja użytkowników,
+		\item logowanie i wylogowywanie z kont,
+		\item szyfrowanie, resetowanie oraz zmiana hasła,
+		\item wygląd i funkcjonalność aplikacji,
+	\end{itemize}
+	\item Maciej Marzec:
+	\begin{itemize}
+		\item wygląd aplikacji,
+		\item przechodzenie między widokami,
+		\item statyczna baza danych,
+		\item logowanie do panelu aplikacji,
+		\item łączenie się z serwerem urządzenia,
+		\item zmiana stanów naszego urządzenia.
+	\end{itemize}
+\end{enumerate}
+\endgraf }
 %
 \long\def\oswiadczenie{%%\newpage 
 \if@twocolumn \onecolumn \fi

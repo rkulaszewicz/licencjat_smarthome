@@ -9,22 +9,24 @@
 \BOOKMARK [1][-]{section.2.4}{Layout\040w\040Kivy}{chapter.2}% 9
 \BOOKMARK [2][-]{subsection.2.4.1}{BoxLayout}{section.2.4}% 10
 \BOOKMARK [2][-]{subsection.2.4.2}{GridLayout}{section.2.4}% 11
-\BOOKMARK [0][-]{chapter.3}{Web\040app}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Python - Flask – co to takiego?}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.2}{Zastosowanie\040w\040aplikacji}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.2.1}{Flask – SQLAlchemy}{section.3.2}% 15
-\BOOKMARK [2][-]{subsection.3.2.2}{Flask – LoginManager}{section.3.2}% 16
-\BOOKMARK [1][-]{section.3.3}{Autoryzacja\040SMS}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.4}{Tworzenie\040stron\040internetowych}{chapter.3}% 18
-\BOOKMARK [0][-]{chapter.4}{Hardware}{}% 19
-\BOOKMARK [1][-]{section.4.1}{ESP8266}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.2}{Raspberry\040pi\0403\040-\040jako\040serwer\040aplikacji}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.3}{Komunikacja}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.4}{Bezpieczeństwo w projektach "Smart Home"}{chapter.4}% 23
-\BOOKMARK [0][-]{chapter*.18}{Zakończenie}{}% 24
-\BOOKMARK [0][-]{appendix.A}{Tytuł załącznika jeden}{}% 25
-\BOOKMARK [0][-]{appendix.B}{Tytuł załącznika dwa}{}% 26
-\BOOKMARK [0][-]{appendix*.19}{Bibliografia}{}% 27
-\BOOKMARK [0][-]{appendix*.20}{Spis\040tabel}{}% 28
-\BOOKMARK [0][-]{appendix*.21}{Spis rysunków}{}% 29
-\BOOKMARK [0][-]{appendix*.22}{Oświadczenie}{}% 30
+\BOOKMARK [1][-]{section.2.5}{Twisted}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.5.1}{Kivy\040z\040Twisted}{section.2.5}% 13
+\BOOKMARK [0][-]{chapter.3}{Web\040app}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Python - Flask – co to takiego?}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{Zastosowanie\040w\040aplikacji}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{Flask – SQLAlchemy}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.2}{Flask – LoginManager}{section.3.2}% 18
+\BOOKMARK [1][-]{section.3.3}{Autoryzacja\040SMS}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Tworzenie\040stron\040internetowych}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Hardware}{}% 21
+\BOOKMARK [1][-]{section.4.1}{ESP8266}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Raspberry\040pi\0403\040-\040jako\040serwer\040aplikacji}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.3}{Komunikacja}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.4}{Bezpieczeństwo w projektach "Smart Home"}{chapter.4}% 25
+\BOOKMARK [0][-]{chapter*.21}{Zakończenie}{}% 26
+\BOOKMARK [0][-]{appendix.A}{Tytuł załącznika jeden}{}% 27
+\BOOKMARK [0][-]{appendix.B}{Tytuł załącznika dwa}{}% 28
+\BOOKMARK [0][-]{appendix*.22}{Bibliografia}{}% 29
+\BOOKMARK [0][-]{appendix*.23}{Spis\040tabel}{}% 30
+\BOOKMARK [0][-]{appendix*.24}{Spis rysunków}{}% 31
+\BOOKMARK [0][-]{appendix*.25}{Oświadczenie}{}% 32

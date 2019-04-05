@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.3.17)  28 APR 2018 10:46
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.3.17)  12 MAY 2018 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1023,9 +1023,6 @@ Overfull \hbox (11.12274pt too wide) in paragraph at lines 105--106
 ESP8266[][][][][].
  []
 
-
-LaTeX Warning: Reference `Diagram' on page 1 undefined on input line 109.
-
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 118.
 (c:/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
@@ -1047,14 +1044,6 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 ]
 Rozdział 1.
-
-LaTeX Warning: Citation `Rouse:2017:Tech' on page 7 undefined on input line 127
-.
-
-
-LaTeX Warning: Citation `Rouse:2016:iot' on page 7 undefined on input line 127.
-
-
 [7
 
 ]
@@ -1165,62 +1154,41 @@ Underfull \vbox (badness 6927) has occurred while \output is active []
 File: JPG/boxlayout.png Graphic file (type bmp)
 <JPG/boxlayout.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
-[20] [21]
+[19] [20] [21]
+File: JPG/gridlayout.png Graphic file (type bmp)
+<JPG/gridlayout.png>
+ [22]
+File: JPG/connect.png Graphic file (type bmp)
+<JPG/connect.png>
+ [23] [24]
 Rozdział 3.
+[25
 
-LaTeX Warning: Citation `Bednarz:2017:Python' on page 22 undefined on input lin
-e 337.
-
-
-LaTeX Warning: Citation `Ronacher:2017:Flask' on page 22 undefined on input lin
-e 338.
-
-[22
-
-] [23] [24]
-
-LaTeX Warning: Citation `Frazier:2018:flask' on page 25 undefined on input line
- 432.
-
-[25]
-
-LaTeX Warning: Reference `Model' on page 26 undefined on input line 448.
-
-[26]
-Overfull \hbox (16.74672pt too wide) in paragraph at lines 478--479
+] [26] [27] [28] [29]
+Overfull \hbox (16.74672pt too wide) in paragraph at lines 518--519
 \TU/lmr/m/n/12 „POST”. W pierwszej kolejności polecenie „User.query.filter(User
 .email==mail).
  []
 
 
-Overfull \hbox (17.25603pt too wide) in paragraph at lines 480--481
+Overfull \hbox (17.25603pt too wide) in paragraph at lines 520--521
 \TU/lmr/m/n/12 przekazywać prywatne informacje, skorzystaliśmy z dekoratora „lo
 gin_required”.
  []
 
-[27]
-
-LaTeX Warning: Citation `seo:2011:SEO' on page 28 undefined on input line 529.
-
-
-LaTeX Warning: Citation `w3c:2018:css' on page 28 undefined on input line 529.
-
-[28]
+[30] [31]
 File: JPG/dadaj.jpg Graphic file (type bmp)
 <JPG/dadaj.jpg>
 File: JPG/wyslij.jpg Graphic file (type bmp)
 <JPG/wyslij.jpg>
- [29]
+ [32]
 Underfull \vbox (badness 1024) has occurred while \output is active []
 
- [30]
-[31]
+ [33]
+[34]
 Rozdział 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--604
+Underfull \hbox (badness 10000) in paragraph at lines 644--644
 [][][][][]$[][][][] [] [] [] [][][] [] [][][][][][][][][][][] [] [][][] [] [][]
 [][][][] [] [][][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][][][][
 ][][][] []
@@ -1230,77 +1198,90 @@ File: JPG/ESP8266.jpg Graphic file (type bmp)
 <JPG/ESP8266.jpg>
 File: JPG/przekaznik.jpg Graphic file (type bmp)
 <JPG/przekaznik.jpg>
-[32
+[35
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 634--634
+Underfull \hbox (badness 10000) in paragraph at lines 674--674
 [][][][][]$[][][][] [] [] [] [][][][][][][][][][][][] [] [][][][][][][][][][][]
 [][][][][][] [] [][][] [] [][][][][][][] [] [][][][] []
  []
 
 File: JPG/rpi3.jpg Graphic file (type bmp)
 <JPG/rpi3.jpg>
-[33]
-Overfull \hbox (3.52675pt too wide) in paragraph at lines 660--661
+[36]
+Overfull \hbox (3.52675pt too wide) in paragraph at lines 700--701
 \TU/lmtt/m/n/12 playload \TU/lmr/m/n/12 przechowujemy stan GPIO do wysłania. Za
  samo przesłanie JSON’a
  []
 
 
-Overfull \hbox (26.9654pt too wide) in paragraph at lines 660--661
+Overfull \hbox (26.9654pt too wide) in paragraph at lines 700--701
 \TU/lmr/m/n/12 na odpowiednie IP ESP odpowiada linia kodu \TU/lmtt/m/n/12 conn.
 request("POST", "/relay",
  []
 
-[34] [35] [36] [37
+[37] [38]
+File: JPG/blocks.jpg Graphic file (type bmp)
+<JPG/blocks.jpg>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--781
+[][][][][]$[][][][][] [] [] [] [][][] [] [][][][][] [] [][] [] [][][][][][][] [
+] [][][] [] [][] [] [][] [] [][][][][][][][][][][][] []
+ []
+
+
+Overfull \hbox (77.25003pt too wide) in paragraph at lines 783--783
+[][][][][]$[][][][][] [] [] [] [][][] [] [][][] [] [][][] [] [][][][][] [] [][]
+[][][][][][][][] [] [][][][] [] [][] [] [][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]| 
+ []
+
+[39] [40] [41
 
 ]
 Dodatek A.
-[38
+[42
 
 ]
 Dodatek B.
-(./licencjat.bbl [39
+(./licencjat.bbl [43
 
-]) [40
+]) [44
 
 ] (./licencjat.lot)
 \tf@lot=\write5
 \openout5 = `licencjat.lot'.
 
- [41
+ [45
 
 ] (./licencjat.lof)
 \tf@lof=\write6
 \openout6 = `licencjat.lof'.
 
- [42
+ [46
 
 ]
-[43
+[47
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 783.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 783.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 817.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 817.
  (./licencjat.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 783.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 783.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 783.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 817.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 817.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 817.
  ) 
 Here is how much of TeX's memory you used:
- 25589 strings out of 493007
- 464047 string characters out of 6137965
- 643284 words of memory out of 5000000
- 29332 multiletter control sequences out of 15000+600000
- 534473 words of font info for 59 fonts, out of 8000000 for 9000
+ 25597 strings out of 493007
+ 464171 string characters out of 6137965
+ 643417 words of memory out of 5000000
+ 29338 multiletter control sequences out of 15000+600000
+ 534465 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  61i,12n,97p,10454b,1854s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on licencjat.pdf (43 pages).
+Output written on licencjat.pdf (47 pages).

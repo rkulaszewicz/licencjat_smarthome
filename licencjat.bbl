@@ -1,27 +1,57 @@
 \begin{thebibliography}{1}
 
-\bibitem{Rouse:2017:Online}
-Sharon~Shea Vendela~Redriksson, Margaret~Rouse.
-\newblock smart home or building {@ONLINE}, 2017.
+\bibitem{Rouse:2017:Tech}
+Vendela Redriksson{,} Margaret Rouse{,}~Sharon Shea.
+\newblock {S}mart {H}ome or building.
+\newblock {\em Techtarget, IoT Agenda}, 2017.
+\newblock Materiał wykorzystany 9 kwietnia 2018.
 
-\bibitem{Rouse:2016:Online}
-Margaret~Rouse Ivy~Wigmore.
-\newblock Internet of things (iot) {@ONLINE}, 2016.
+\bibitem{Rouse:2016:iot}
+Ivy Wigmore{,}~Margaret Rouse.
+\newblock {I}nternet of {T}hings ({I}o{T}).
+\newblock {\em Techtarget, IoT Agenda}, 2016.
+\newblock Materiał wykorzystany 9 kwietnia 2018.
 
-\bibitem{Bednarz:2017:Online}
+\bibitem{KivyAuthors:2018:kivy}
+The~Kivy Authors.
+\newblock Welcome to kivy.
+\newblock {\em Kivy Documentation}, 2017.
+\newblock Materiał wykorzystany 29 marca 2018.
+
+\bibitem{Peticolas:2018:twisted}
+Dave Peticolas.
+\newblock Twisted introduction.
+\newblock {\em multi-part introduces}, 2018.
+\newblock Materiał wykorzystany 12 kwietnia 2018.
+
+\bibitem{Bednarz:2017:Python}
 Centrum~Edukacji Obywatelskiej.
-\newblock Szkolenia python 101 {@ONLINE}, 2017.
+\newblock {S}zkolenia {P}ython 101.
+\newblock {\em Python 101}, 2017.
+\newblock Materiał wykorzystany 10 kwietnia 2018.
 
-\bibitem{Ronacher:2017:Online}
-Armin Ronacher.
-\newblock Welcome to flask {@ONLINE}, 2017.
+\bibitem{Ronacher:2017:Flask}
+Armin Ronache.
+\newblock {W}elcome to {F}lask.
+\newblock {\em Flask web development, one drop at a time}, 2017.
+\newblock Materiał wykorzystany 11 kwietnia 2018.
 
-\bibitem{seo:2011:Online}
+\bibitem{Frazier:2018:flask}
+Matthew Frazier.
+\newblock {F}lask-{L}ogin 0.4.1 documentation.
+\newblock {\em Flask-Login Documentation}, 2017.
+\newblock Materiał wykorzystany 25 kwietnia 2018.
+
+\bibitem{seo:2011:SEO}
 VTech SEO.
-\newblock Advantages of html {@ONLINE}, 2011.
+\newblock {A}dvantages of {HTML}.
+\newblock {\em VTech SEO, Advantages of an HTML - based website...}, 2011.
+\newblock Materiał wykorzystany 13 kwietnia 2018.
 
-\bibitem{w3c:2018:Online}
+\bibitem{w3c:2018:css}
 W3.CSS.
-\newblock Css tutorial {@ONLINE}, 2018.
+\newblock {CSS} {T}utorial.
+\newblock {\em w3schools.com, Learn CSS}, 2018.
+\newblock Materiał wykorzystany 13 kwietnia 2018.
 
 \end{thebibliography}

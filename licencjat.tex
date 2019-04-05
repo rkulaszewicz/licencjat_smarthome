@@ -102,11 +102,11 @@ showstringspaces=false,
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%      streszczenie      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-W projekcie „Inteligentny Dom” wykorzystaliśmy układy scalone ESP8266\footnote{\url{http://en.wikipedia.org/wiki/ESP8266}}. Zostały one wmontowane w listwę zasilającą, a dzięki możliwości zaprogramowania ich w języku C oraz GPIO\footnote{wyjście -- wejście ogólnego przeznaczenia}, umożliwiają otwarcie lub zamknięcie przepływu prądu. Układy poprzez moduł Wi-Fi łączą się z serwerem, do którego wysyłają informacje o aktualnym stanie urządzenia oraz odbierają sygnały zarządzające. Użytkownik może włączać lub wyłączać przepływ prądu korzystając z aplikacji mobilnej bądź strony internetowej. W obu przypadkach posłużyliśmy się językiem Python, lecz używając różnych bibliotek oraz framework’ów. Twisted i Kivy przy pisaniu aplikacji na system Android oraz Flask w przypadku strony internetowej. 
+W projekcie „Inteligentny Dom” wykorzystaliśmy układy scalone ESP8266\footnote{\url{http://en.wikipedia.org/wiki/ESP8266}}. Zostały one wmontowane w listwę zasilającą, a dzięki możliwości zaprogramowania ich w języku C oraz GPIO\footnote{wyjście -- wejście ogólnego przeznaczenia}, umożliwiają otwarcie lub zamknięcie przepływu prądu. Układy poprzez moduł Wi--Fi łączą się z serwerem, do którego wysyłają informacje o aktualnym stanie urządzenia oraz odbierają sygnały zarządzające. Użytkownik może włączać lub wyłączać przepływ prądu korzystając z aplikacji mobilnej bądź strony internetowej. W obu przypadkach posłużyliśmy się językiem Python, lecz używając różnych bibliotek oraz frameworków: Twisted--Kivy na system Android,  Flask dla strony internetowej. 
 
-Ze względów bezpieczeństwa program wymaga od użytkownika rejestracji oraz każdorazowego logowania. W celu odizolowania się od niechcianego działania osób trzecich, dzięki zastosowaniu rozszerzenia Flask -- SQLAlchemy\footnote{\url{http://flask-sqlalchemy.pocoo.org/2.3/}}, autoryzacja odbywa się po stronie serwera. Po zalogowaniu, przed pierwszym zastosowaniem urządzenia, należy zarejestrować układ ESP podając jego adres IP. W celu nawiązania komunikacji http zastosowaliśmy rozszerzenia biblioteki urlib, z kolei kontakt z modemem 3G jest możliwy poprzez serial port. 
+Program wymaga od użytkownika rejestracji oraz każdorazowego logowania. Aby odizolować się od niechcianego działania osób trzecich, autoryzacja odbywa się po stronie serwera, poprzez rozszerzenie Flask -- SQLAlchemy\footnote{\url{http://flask-sqlalchemy.pocoo.org/2.3/}}. Po zalogowaniu, przed pierwszym zastosowaniem urządzenia, należy zarejestrować układ ESP podając jego adres IP. Komunikację zaimplementowaliśmy przez urlib, z kolei kontakt z modemem 3G jest możliwy poprzez serial port. 
 
-Przykładowy schemat działania aplikacji został przedstawiony na diagramie \ref{Diagram}.
+Schemat działania aplikacji został przedstawiony na diagramie \ref{Diagram}.
 
 
 \end{abstract}
@@ -119,37 +119,17 @@ Przykładowy schemat działania aplikacji został przedstawiony na diagramie \re
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%         wprowadzenie      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \introduction
-Kiedyś pomysł stworzenia instalacji oraz systemu umożliwiającego sterowanie urządzeniami w budynku był mało realny. Mogliśmy jedynie sobie wyobrażać o ile nasze życie mogłoby być wygodniejsze. Obecnie, coraz częściej możemy usłyszeć o projektach kreowanych od samych podstaw pod „futurystyczne” obiekty.\footnote{\url{https://www.mgprojekt.com.pl/blog/inteligentny-dom/ dn. 2018-03-22}} Założeniami zastosowania nowoczesnej technologii jest głównie poprawa naszego komfortu i bezpieczeństwa, które są celem naszego projektu. Wyobraźmy sobie sytuację, kiedy wracamy zmęczeni po wyczerpującym dniu w pracy. Za pomocą naszego pilota - w tym wypadku smartphone'a - przed wejściem do mieszkania włączymy oświetlenie, telewizję lub muzykę i usiądziemy odrazu wygodnie w fotelu. Komercyjne rozwiązania takie jak DEIMIC\footnote{\url{http://deimic.pl/system-deimic/aplikacja-sterowania-domem}} czy też Samsung Smart Home\footnote{\url{https://play.google.com/store/apps/details?id=com.samsung.smarthome}} posiadają ogrom możliwości. Przykładowo pozwala ustawić konkretną temperaturę w wyznaczonej strefie obiektu, uzbrajać alarm, sterować klimatyzacją oraz wiele innych. Nasz projekt zespołowy skupia się na dwóch płaszczyznach. Stworzyliśmy aplikację mobilną oraz webową, aby użytkownik nie był ograniczony jedynie do telefonu komórkowego. Zaimplementowaliśmy podstawowe funkcje wyróżniające ten typ aplikacji, które zostaną opisane i poparte przykładami w dalszej częśći pracy.
+Kiedyś pomysł stworzenia instalacji oraz systemu umożliwiającego sterowanie urządzeniami w budynku był mało realny. Mogliśmy jedynie sobie wyobrażać o ile nasze życie mogłoby być wygodniejsze. Obecnie, coraz częściej możemy usłyszeć o projektach kreowanych od samych podstaw pod „futurystyczne” obiekty.\footnote{\url{https://www.mgprojekt.com.pl/blog/inteligentny-dom/ dn. 2018-03-22}} Założeniami zastosowania nowoczesnej technologii jest głównie poprawa naszego komfortu i bezpieczeństwa, które są celem naszego projektu. Wyobraźmy sobie sytuację, kiedy wracamy zmęczeni po wyczerpującym dniu w pracy. Za pomocą naszego pilota -- w tym wypadku smartphone'a -- przed wejściem do mieszkania włączymy oświetlenie, telewizję lub muzykę i usiądziemy odrazu wygodnie w fotelu. Komercyjne rozwiązania takie jak DEIMIC\footnote{\url{http://deimic.pl/system-deimic/aplikacja-sterowania-domem}} czy też Samsung Smart Home\footnote{\url{https://play.google.com/store/apps/details?id=com.samsung.smarthome}} posiadają ogrom możliwości. Przykładowo pozwala ustawić konkretną temperaturę w wyznaczonej strefie obiektu, uzbrajać alarm, sterować klimatyzacją oraz wiele innych. Nasz projekt zespołowy skupia się na dwóch płaszczyznach. Stworzyliśmy aplikację mobilną oraz webową, aby użytkownik nie był ograniczony jedynie do telefonu komórkowego. Zaimplementowaliśmy podstawowe funkcje wyróżniające ten typ aplikacji, które zostaną opisane i poparte przykładami w dalszej częśći pracy.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%        I  RODZIAŁ           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Nasza wizja Inteligentnego Domu}
-Inteligentnym domem\cite{Rouse:2017:Tech}\footnote{ang. \emph{Smart Home}} potocznie określamy automatykę domową, czyli możliwość zdalnego sterowania bądź zaprogramowania urządzeń w naszym domu. Grupę takich urządzeń nazywany Internetem Rzeczy\cite{Rouse:2016:iot}\footnote{ang. \emph{Internet of Things (IoT)}}. Może być to samochód z czujnikami parkowania, roleta w oknie podnosząca się o wschodzie słońca, a nawet pies z chipem lokalizacyjnym czy człowiek z implantem do monitorowania akcji serca. Każde urządzenie, któremu możemy przypisać unikatowy identyfikator i ma możliwość przesyłania danych przez sieć internetową, nazwiemy IoT. 
-
-Powodem do stworzenia takiej technologii była niedoskonałość człowieka. Ludzie mają ograniczoną uwagę. Dokładność i prędkość odbierania oraz analizowania przez nas danych środowiskowych jest niedostateczna. Stworzenie urządzeń, które robią to za nas nieomylnie, 24 godziny na dobę mogłoby doprowadzić (i doprowadziło) do ograniczenia strat i kosztów. Dzięki większej niezawodności, technologia IoT znalazła zastosowanie wszędzie tam gdzie wymagana jest precyzja (branże rolnicze, budowlane, transport), ale i w prywatnych mieszkaniach.
-Choć na co dzień nie potrzebujemy wysoce dokładniej obserwacji i pomiarów naszego otoczenia, to możliwość komunikacji i  przesyłania danych między urządzeniami, sprawiła że nasze domy mogą być bardziej bezpieczne i wygodne. Obecnie producenci prześcigają się w tworzeniu mniej lub bardziej przydatnych rozwiązań, które mają zapewnić nam komfort fizyczny i psychiczny.
-
-\newpage Przykłady:
-\begin{itemize}
-\item ochrona przed włamaniem: \newline \url{https://nest.com/alarm-system/overview/}
-\item ochrona przed pożarem: \newline \url{https://onelink.firstalert.com/}
-\item pomoc w sprzątaniu:\newline \url{http://irobot.pl/pl/?utm_source=Google&utm_campaign=AdWords&gclid=EAIaIQobChMIq7D9oeat2gIVy5ztCh2Img3cEAAYASAAEgL9qPD_BwE}
-\item smart lodówki: \newline \url{https://www.samsung.com/us/explore/family-hub-refrigerator/overview/}
-\item smart TV:\newline \url{http://www.samsung.com/pl/campaign/telewizor/smarttv/#intro}
-\item zarządzanie oświetleniem: \newline \url{https://www.control4.com/solutions/smart-lighting}
-\item pełne zarządzanie domem:\newline \url{https://www.somfy.pl/produkty/inteligentne-domy/tahoma-premium?clid=EAIaIQobChMIx8T80OWt2gIVw7YYCh3hAAM7EAAYASAAEgKczvD_BwE}
-\hspace{5mm} \newline \url{http://www.grenton.pl/system/rozwiazania-system-inteligentnego-domu.html?gclid=EAIaIQobChMIhOXHpeWw2gIVlxsYCh0ZkQsrEAAYASAAEgKSN_D_BwE}
-\end{itemize}
-
-\newpage
-Niestety choć komercyjne rozwiązania wyglądają atrakcyjnie to ich cena i koszt instalacji, bywają mniej zachęcające. Ponadto im więcej sprzętów i czujników mamy do dyspozycji, tym bardziej zawiła staje się obsługa programu, który nimi zarządza. 
-
-Dlatego postanowiliśmy opracować własne rozwiązanie, opierające się na jednej podstawowej funkcji, czyli włączaniu i wyłączaniu urządzeń. Dzięki temu aplikacja jest prosta w obsłudze, a aby nasz dom stał się bardziej „smart” nie potrzebujemy nowych sprzętów, ani dodatkowej instalacji. Należące do IoT układy scalone wmontowaliśmy w listwę zasilającą i poprzez połączenie z aplikacją możemy zatrzymać przepływ prądu. Tak naprawdę nie sterujemy wcale samym urządzeniem, a jedynie decydujemy o czasie dostarczania mu zasilania. Nie jest to doskonałe rozwiązanie, lecz jest tańsze i mniej inwazyjne w porównaniu obecnych na rynku ofert. W ten sposób możemy zdalnie włączać i wyłączać każde urządzenie podpięte do takiej listwy.  
+Komercyjne rozwiązania wyglądają atrakcyjnie, ale ich cena i koszt instalacji, bywają zbyt wysokie. Ponadto im więcej sprzętów i czujników mamy do dyspozycji, tym bardziej zawiła staje się obsługa programu. Dlatego opracowaliśmy własne rozwiązanie, którego prostotę osiągnęliśmy implementując jedną funkcję, czyli włączanie i wyłączanie urządzeń. Aby nasz dom stał się bardziej „smart” nie potrzebujemy nowych sprzętów, ani dodatkowej instalacji. Należące do IoT układy scalone wmontowaliśmy w listwę zasilającą i poprzez połączenie z aplikacją możemy zatrzymać przepływ prądu. Tak naprawdę nie sterujemy wcale samym urządzeniem, a jedynie decydujemy o czasie dostarczania mu zasilania. Nie jest to doskonałe rozwiązanie, lecz jest tańsze i mniej inwazyjne w porównaniu obecnych na rynku ofert. W ten sposób możemy zdalnie włączać i wyłączać każde urządzenie podpięte do takiej listwy.    
 
 \hspace{2cm}
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=1\hsize]{JPG/zestaw}
+\includegraphics[width=0.8\hsize]{JPG/zestaw}
 \caption{Zdjęcie złożonego zestawu}
 \end{center}
 \end{figure}
@@ -166,7 +146,7 @@ Do działania aplikacji potrzebujemy przynajmniej jednej listwy z układem ESP  
 \end{center}
 \end{figure}
 
-Jeśli jesteśmy nowymi użytkownikami, najpierw trzeba się zarejestrować. W tym celu należy podać swój login, adres e-mail, hasło oraz numer telefonu. Na podany numer zostanie wysłany czterocyfrowy, losowy kod aktywacyjny, którym potwierdzimy swoją tożsamość i będziemy mogli zalogować się do panelu sterowania.
+Jeśli jesteśmy nowymi użytkownikami, najpierw trzeba się zarejestrować. W tym celu należy podać swój login, adres e--mail, hasło oraz numer telefonu. Na podany numer zostanie wysłany czterocyfrowy, losowy kod aktywacyjny, którym potwierdzimy swoją tożsamość i będziemy mogli zalogować się do panelu sterowania.
 
 \begin{figure}
 \begin{center}
@@ -182,7 +162,7 @@ Jeśli jesteśmy nowymi użytkownikami, najpierw trzeba się zarejestrować. W t
 \end{center}
 \end{figure}
 
-\newpage W przypadku gdy nasze hasło nie działa bądź go zapomnieliśmy, możemy wykorzystać funkcję  „Zapomniałeś hasła?”. Po wpisaniu adresu e-mail, wykorzystanego podczas rejestracji, ponownie otrzymamy czterocyfrowy kod, który umożliwi nam przejście do naszego panelu. Po zalogowaniu możemy zmienić hasło na nowe w zakładce „Zmień hasło”.
+\newpage W przypadku gdy nasze hasło nie działa bądź go zapomnieliśmy, możemy wykorzystać funkcję  „Zapomniałeś hasła?”. Po wpisaniu adresu e--mail, wykorzystanego podczas rejestracji, ponownie otrzymamy czterocyfrowy kod, który umożliwi nam przejście do naszego panelu. Po zalogowaniu możemy zmienić hasło na nowe w zakładce „Zmień hasło”.
 
 \hspace{2cm}
 \begin{figure}[h]
@@ -219,13 +199,12 @@ Początkowo panel starowania będzie pusty. Aby dodać do widoku układ, nad kt�
 \end{center}
 \end{figure}
 
-\newpage Ogólny schemat działania aplikacji został przedstawiony na diagramie DFD:
+Schemat działania aplikacji został przedstawiony na diagramie DFD:
 
-\hspace{2cm}
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=1.1\hsize]{JPG/diagram}
-\caption{Diagram DFD}
+\includegraphics[width=1.65\hsize, angle=90]{JPG/diagram}
+\caption{Diagram DFD -- opracowanie własne}
 \label{Diagram}
 \end{center}
 \end{figure}
@@ -241,7 +220,7 @@ Windowsie, Linuksie, MacOS, Androidzie oraz iOS. Istnieją dwie metody tworzenia
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%       podrozdział 2.2          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dlaczego został wybrany?}
-Jednym z przedmiotów podczas realizowania programu nauczania studiów I stopnia informatyki był właśnie Python. Ze względu na czytelność i klarowność jego kodu został wybrany na język przewodni w naszym projekcie. Jako, że Kivy jest tworzone w Pythonie, a to główna zaleta odnośnie alternatywnych rozwiązań, zdecydowaliśmy się właśnie na ten framework. Również zaletami jest łatwe i niestandardowe tworzenie wyglądu. Dokumentacja jest napisana w sposób czytelny, zrozumiały dla osób mających styczność pierwszy raz z Kivy. Problemem przede wszystkim może być to, że ta technologia jest dość „świeża”, co za tym idzie szukanie pomocy na forach kończy się praktycznie zerowym odzewem. Jeszcze jednym zauważalnym minusem okazuje się być narzędzie do „deploy'owania” - Buildozer, który działa poprawnie tylko na linuksie.
+Jednym z przedmiotów podczas realizowania programu nauczania studiów I stopnia informatyki był właśnie Python. Ze względu na czytelność i klarowność jego kodu został wybrany na język przewodni w naszym projekcie. Jako, że Kivy\cite{KivyAuthors:2018:kivy} jest tworzone w Pythonie, a to główna zaleta odnośnie alternatywnych rozwiązań, zdecydowaliśmy się właśnie na ten framework. Również zaletami jest łatwe i niestandardowe tworzenie wyglądu. Dokumentacja jest napisana w sposób czytelny, zrozumiały dla osób mających styczność pierwszy raz z Kivy. Problemem przede wszystkim może być to, że ta technologia jest dość „świeża”, co za tym idzie szukanie pomocy na forach kończy się praktycznie zerowym odzewem. Jeszcze jednym zauważalnym minusem okazuje się być narzędzie do „deploy'owania” -- Buildozer, który działa poprawnie tylko na linuksie.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%       podrozdział 2.3          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Kivy ScreenManager}
@@ -251,8 +230,8 @@ Poruszanie się po naszej aplikacji oparliśmy właśnie o ScreenMenager. Wykorz
 \begin{lstlisting}  [style=py] 
 def login{self}:
 	self.root.current = 'login'
-\end{lstlisting}
-Przykładowo prosta funkcja, która odwołuje się do naszego w tym wypadku podanego w cudzysłowie ID - login. Jeśli podane przez nas ID w funkcji istnieje w pliku kv, ScreenManager przeniesie nas w aplikacji do docelowego widoku. 
+\end{lstlisting}	
+Przykładowo prosta funkcja, która odwołuje się do naszego w tym wypadku podanego w cudzysłowie ID -- login. Jeśli podane przez nas ID w funkcji istnieje w pliku kv, ScreenManager przeniesie nas w aplikacji do docelowego widoku. 
 \begin{lstlisting}  
 Screen:
 	name:  'login'
@@ -266,7 +245,7 @@ Button:
 	background_normal: 'button_normal.png'
 	background_down: 'button_down.png'
 \end{lstlisting}
-W naszym widoku zdefininiowaliśmy przycisk. Posiada on pole typu text, gotową funkcję on\_press zaczerpnięta z framework'u, oraz wygląd zaimportowany z plików png. On\_press, jak sama nazwa wskazuje, po wciśnięciu wykona pożądane przez nas działanie. W tym wypadku, jeśli istnieje app.login zostanie wywołana funkcja.  
+W naszym widoku zdefininiowaliśmy przycisk. Posiada on pole typu text, gotową funkcję on\_press zaczerpnięta z frameworku, oraz wygląd zaimportowany z plików png. On\_press, jak sama nazwa wskazuje, po wciśnięciu wykona pożądane przez nas działanie. W tym wypadku, jeśli istnieje app.login zostanie wywołana funkcja.  
 \subsection{Przykładowy screen}
 \begin{lstlisting} 
 Screen:
@@ -310,9 +289,15 @@ W kivy tworzenie layout'u jest dość specyficzne. Jest kilka możliwości uło�
 \item StackLayout: ułożenie widżetów od lewej do prawej.
 W naszej aplikacji wykorzystaliśmy GridLayout oraz BoxLayout.
 \subsection{BoxLayout}
-\includegraphics[width=0.8\hsize]{JPG/boxlayout} 
-\newline
-Tak wygląda nasze menu aplikacji mobilnej po podłączeniu się do serwera za pomocą framework'u Twisted. Jest ono zdefiniowane w wyżej wymienionym BoxLayout. Został ułożony on w orientacji pionowej. \newline Definiuje się to w następujący sposób:
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.75\hsize]{JPG/boxlayout}
+\caption{Menu w BoxLayout}
+
+\end{center}
+\end{figure}
+
+Tak wygląda nasze menu aplikacji mobilnej po podłączeniu się do serwera za pomocą frameworku Twisted. Jest ono zdefiniowane w wyżej wymienionym BoxLayout. Został ułożony on w orientacji pionowej. \newline Definiuje się to w następujący sposób:
 \begin{lstlisting} 
 BoxLayout:
    orientation: 'vertical'
@@ -325,17 +310,51 @@ Ważną kwestią w tworzeniu layout'u jest zaprogramowanie jego paremetrów. W t
 	spacing: 10
 \end{lstlisting}
 Przy czym padding jest wypełnieniem pozycji pomiędzy dwoma polami, a spacing odstępami podanymi w pikselach.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GRIDLAYOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \subsection{GridLayout}
-Przykład wykorzystania GridLayout w jednym z widoków.  Ułożenie 
+\begin{lstlisting} 
+<GridLayout>:
+    rows: 4
+    cols: 2
+    padding: 30
+    spacing: 30
+    row_default_height: 90
+    row_force_default: True
+\end{lstlisting}
+W ten sposób definiujemy GridLayout w pliku Kv. Rows odpowiada za maksymalną ilość wierszy, a cols kolumn. Jeśli w tworzeniu naszego widoku po użyciu właśnie zdefiniowanego layout'u
+użyjemy więcej pól -- przykładowo przyciskow czy tabel -- nie zostaną one uwzględnionie. Dodatkowo została użyta funkcja row\_force\_default, która jeśli jest True, nakazuje ignorować narzuconą wysokość oraz size\_hint\_y, przez co używa domyślnej wysokości wiersza.
+\newpage
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\hsize]{JPG/gridlayout}
+\caption{Ekran logowania w GridLayout}
+\end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TWISTED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Twisted}
+Naszym pierwszym krokiem przy tworzeniu aplikacji mobilnej było stworzenie połączenia między nią a naszym urządzeniem sterującym. Do tego potrzebowaliśmy frameworku sieciowego. Twisted\cite{Peticolas:2018:twisted} obejmuje obsługę popularnych protokołów sieciowych, takich jak na przykład HTTP i SMTP. Oszczędza bardzo wiele pracy programiście, ze względu na dużą ilość funkcji, klas oraz korzysta z introspekcji Pythona. Do testów został stworzony również serwer oparty o tą technologię. Największą zaletą był brak wymaganej konfiguracji, przez co stworzenie go, nie wymagało nadmiaru pracy.
+\newpage
+\subsection{Kivy z Twisted}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.75\hsize]{JPG/connect}
+\caption{Widok łączenia się z serwerem}
+
+\end{center}
+\end{figure}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%        III  RODZIAŁ           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Web app}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%       podrozdział 3.1          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Python - Flask -- co to takiego?}
+\section{Python -- Flask -- co to takiego?}
 „Python jest dynamicznie typowanym językiem interpretowanym wysokiego poziomu”\cite{Bednarz:2017:Python}. Oznacza to, że Pyhton jest wykonywany na bieżąco, linijka po linijce. Nie jest on kompilowany, a jedynie wczytywany i wykonywany podczas uruchomienia przez interpreter języka. Języki skryptowe są mniej wydajne od języków kompilowanych, jednakże są dość proste w użyciu, przez co dobrze sprawdzają się podczas pisania niewielkich aplikacji. 
-Podstawowymi framework’ami\footnote{\url{https://pl.wikipedia.org/wiki/Framework}} Python’a są Django oraz Flask\cite{Ronacher:2017:Flask}. Naszym założeniem było stworzenie prostej i szybkiej aplikacji, dlatego zdecydowaliśmy się na wykorzystanie Flask’a. Jest to micro-framework obsługujący rozszerzenia, które mogą dodawać funkcje do aplikacji, takie jak sprawdzanie poprawności formularzy, obsługa wysyłania czy otwarte technologie uwierzytelniania. Ponadto jest kompatybilny z Google App Engine, zawiera zintegrowaną obsługę testów jednostkowych, obsługę plików cookie, a przede wszystkim posiada serwer programistyczny i debugger. Dzięki temu nie wymaga żadnych dodatkowych narzędzi. Dzięki swoim funkcjom, Flask upraszcza projektowanie stron www. 
+Podstawowymi framework’ami\footnote{\url{https://pl.wikipedia.org/wiki/Framework}} Python’a są Django oraz Flask\cite{Ronacher:2017:Flask}. Naszym założeniem było stworzenie prostej i szybkiej aplikacji, dlatego zdecydowaliśmy się na wykorzystanie Flask’a. Jest to micro--framework obsługujący rozszerzenia, które mogą dodawać funkcje do aplikacji, takie jak sprawdzanie poprawności formularzy, obsługa wysyłania czy otwarte technologie uwierzytelniania. Ponadto jest kompatybilny z Google App Engine, zawiera zintegrowaną obsługę testów jednostkowych, obsługę plików cookie, a przede wszystkim posiada serwer programistyczny i debugger. Dzięki temu nie wymaga żadnych dodatkowych narzędzi. Dzięki swoim funkcjom, Flask upraszcza projektowanie stron www. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%       podrozdział 3.2          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Zastosowanie w aplikacji}
@@ -360,7 +379,7 @@ wskazuje na miejsce przechowywania zasobów aplikacji.
 
 \subsection{Flask -- SQLAlchemy}
 
-SQLAlchemy jest stworzonym dla Pythona narzędziem,  który wraz z ORM\footnote{Object Relational Mapper} oferuje pełną funkcjonalność języka SQL bez konieczności samodzielnego pisania skomplikowanych zapytań. Flask-SQLAlchemy z kolei jest niczym innym jak rozszerzeniem dodającym usługę SQL do programu. 
+SQLAlchemy jest stworzonym dla Pythona narzędziem,  który wraz z ORM\footnote{Object Relational Mapper} oferuje pełną funkcjonalność języka SQL bez konieczności samodzielnego pisania skomplikowanych zapytań. Flask--SQLAlchemy z kolei jest niczym innym jak rozszerzeniem dodającym usługę SQL do programu. 
 
 W naszym przypadku do pełnego i bezpiecznego działania aplikacji, konieczne było stworzenie tabel przechowujących dane logujących się osób oraz informacje o podłączanych urządzeniach.
 Aby nasza baza mogła funkcjonować w pliku \_\_init\_\_.py utworzyliśmy jej instancję 
@@ -475,7 +494,7 @@ def login():
     return render_template('signin.html')
 \end{lstlisting}
 
-Adres e-mail oraz hasło przekazywane są za pomocą metod „GET” i „POST”. W pierwszej kolejności  polecenie „User.query.filter(User.email==mail). first()” wyszukuje w bazie użytkownika o podanym adresie e-mail, by kolejno, zweryfikować poprawność wprowadzonego hasła, sprawdzić czy konto użytkownika zostało aktywowane oraz by pobrać i zapamiętać jego identyfikator dla bieżącej sesji. W przypadku jakiegokolwiek błędu otrzymamy komunikat bądź zostaniemy przekierowani na odpowiednią stronę. 
+Adres e--mail oraz hasło przekazywane są za pomocą metod „GET” i „POST”. W pierwszej kolejności  polecenie „User.query.filter(User.email==mail). first()” wyszukuje w bazie użytkownika o podanym adresie e--mail, by kolejno, zweryfikować poprawność wprowadzonego hasła, sprawdzić czy konto użytkownika zostało aktywowane oraz by pobrać i zapamiętać jego identyfikator dla bieżącej sesji. W przypadku jakiegokolwiek błędu otrzymamy komunikat bądź zostaniemy przekierowani na odpowiednią stronę. 
 
 Przed wywołaniem każdej funkcji, która ma za zadanie wyświetlać lub przekazywać prywatne informacje, skorzystaliśmy z dekoratora „login\_required”. Ma on za zadanie zapewnić poprawność wyświetlanych informacji dla danego użytkownika oraz uniemożliwić dostęp osobom niepowołanym. Na przykład przed funkcją przekierowującą do strony panelu sterowania:
 
@@ -522,7 +541,7 @@ def wyslij_sms(numer, pin):
     return 0
 \end{lstlisting}
 
-Komunikacja aplikacji i modumu GSM odbywa się przez komendy AT\footnote{\url{https://sonnguyen.ws/send-sms-from-raspberry-pi-with-usb-3g/}} oraz bibliotekę PySerial 3.4\footnote{\url{http://pyserial.readthedocs.io/en/latest/pyserial.html}}
+Komunikacja aplikacji i modumu GSM odbywa się przez komendy AT\footnote{\url{https://sonnguyen.ws/send-sms-from-raspberry-pi-with-usb-3g/}} oraz bibliotekę PySerial 3.4\cite{pyserial:2016:esp}\footnote{\url{http://pyserial.readthedocs.io/en/latest/pyserial.html}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%       podrozdział 3.4          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tworzenie stron internetowych}
@@ -575,9 +594,9 @@ Podstawą zasadą przy tworzeniu stron HTML jest trzymanie się ogólnych norm p
 }
 \end{lstlisting}
 
-Mamy tutaj przykład dwóch przycisków opisanych atrybutami „value”, „type” i „class”. Pierwszy określa etykietę przycisku, drugi rodzaj wstawianego pola, a trzeci jest odwołaniem do pliku .css. Selektor „button” w naszym arkuszy stylu określa m.in. rozmiar przycisku (height, width), wygląd czcionki (color, font-size, font-weight. text-shadow), tła (background-color) czy nawet zaokrąglenia rogów (border-radius). Klasa „button:hover” z kolei odpowiada za zachowanie przycisku po najechaniu na niego myszką, w tym przypadku jego kolor i czcionka ulegną zmianie na przeciwne. 
+Mamy tutaj przykład dwóch przycisków opisanych atrybutami „value”, „type” i „class”. Pierwszy określa etykietę przycisku, drugi rodzaj wstawianego pola, a trzeci jest odwołaniem do pliku .css. Selektor „button” w naszym arkuszy stylu określa m.in. rozmiar przycisku (height, width), wygląd czcionki (color, font--size, font--weight. text--shadow), tła (background--color) czy nawet zaokrąglenia rogów (border--radius). Klasa „button:hover” z kolei odpowiada za zachowanie przycisku po najechaniu na niego myszką, w tym przypadku jego kolor i czcionka ulegną zmianie na przeciwne. 
 
- Obecnie treść przeglądarek internetowych możemy wyświetlać nie tylko na komputerach ale i telewizorach, projektorach, czytnikach e-book’ów oraz telefonach. W zależności od rozmiaru ekranu treść naszej strony może się nie zmieścić lub zostać rozciągnięta. Dlatego wraz w wprowadzeniem nowej wersji CSS3 zostały rozbudowane reguły @media. Dzięki nim możemy zmienić wygląd naszej strony w zależności na jakim urządzeniu zostanie wyświetlona. Nasza strona została dostosowana do małych ekranów telefonów (poniżej 730px) tak, aby elementy na niej zawarte dostosowały swoją pozycję. 
+ Obecnie treść przeglądarek internetowych możemy wyświetlać nie tylko na komputerach ale i telewizorach, projektorach, czytnikach e--book’ów oraz telefonach. W zależności od rozmiaru ekranu treść naszej strony może się nie zmieścić lub zostać rozciągnięta. Dlatego wraz w wprowadzeniem nowej wersji CSS3 zostały rozbudowane reguły @media. Dzięki nim możemy zmienić wygląd naszej strony w zależności na jakim urządzeniu zostanie wyświetlona. Nasza strona została dostosowana do małych ekranów telefonów (poniżej 730px) tak, aby elementy na niej zawarte dostosowały swoją pozycję. 
 
 \hspace{2cm}
 \begin{lstlisting} [style=py]
@@ -601,7 +620,7 @@ Mamy tutaj przykład dwóch przycisków opisanych atrybutami „value”, „typ
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%       podrozdział 4.1          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ESP8266}
-W naszym projekcie wykorzystalimy moduł WiFi oparty na układzie ESP8266-12E\footnote{\url{http://www.kloppenborg.net/images/blog/esp8266/esp8266-esp12e-specs.pdf}} jako sterownik przekaźnika. 
+W naszym projekcie wykorzystalimy moduł WiFi oparty na układzie ESP8266--12E\cite{esp:2015:datasheet}\footnote{\url{http://www.kloppenborg.net/images/blog/esp8266/esp8266-esp12e-specs.pdf}} jako sterownik przekaźnika. 
 \hspace{2cm}
 \begin{figure}[h]
 \centering
@@ -614,7 +633,7 @@ W naszym projekcie wykorzystalimy moduł WiFi oparty na układzie ESP8266-12E\fo
 \caption{Moduł ESP8266 i Przekaźnik 2-kanałowy}
 \end{figure}
 
-Esp Nodemcu v2 to programowalny mikrokontroler posiadający 32-bitowy CPU, 4MB pamięci Flash oraz 16 wyprowadzeń GPIO. Komunikacja odbywa się przez WiFi 802.11 b/g/n na częstotliwości 2,4 GHz. Do programowania układu wykorzystałem język "C" i środowisko Arduino IDE\footnote{\url{https://www.arduino.cc/en/main/software}}. Programator UART, który jest wlutowany w płytkę ułatwia wygrywanie programów przez standardowy kabel USB. 
+Esp Nodemcu v2 to programowalny mikrokontroler posiadający 32--bitowy CPU, 4MB pamięci Flash oraz 16 wyprowadzeń GPIO. Komunikacja odbywa się przez WiFi 802.11 b/g/n na częstotliwości 2,4 GHz. Do programowania układu wykorzystałem język "C" i środowisko Arduino IDE\footnote{\url{https://www.arduino.cc/en/main/software}}. Programator UART, który jest wlutowany w płytkę ułatwia wygrywanie programów przez standardowy kabel USB. 
 
 ESP8266 został zaprogramowany do działania w trybie klienta WiFi w naszej lokalnej sieci. Dane dla naszej sieci podajemy przy programowaniu urządzenia:
 \begin{lstlisting} [style=py] 
@@ -630,8 +649,8 @@ Od tej chwili sterownik jest podłączony do routera.
 Przekaźnik, który włącza lub wyłącza wysokie napięcie wyposażony jest w optoizolację\footnote{\url{https://pl.wikipedia.org/wiki/Transoptor}} zapewniając odseparowanie napięcia 230V a ESP8266. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%       podrozdział 4.2          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Raspberry pi 3 - jako serwer aplikacji}
-Mikrokomputer wyposażony w czterordzeniowy procesor ARM, 1 GB RAM, porty USB oraz HDMI. Cało pod kontrolą Linuxa specjalnie przygotowany dla Raspberry Pi 3\footnote{\url{http://docs-europe.electrocomponents.com/webdocs/14ba/0900766b814ba5fd.pdf}}. Zasilany przez 5V ładowarkę np. telefoniczną. Taką konfigurację posiada nasz serwer, który obsługuję  aplikację webową.
+\section{Raspberry pi 3 -- jako serwer aplikacji}
+Mikrokomputer wyposażony w czterordzeniowy procesor ARM, 1 GB RAM, porty USB oraz HDMI. Cało pod kontrolą Linuxa specjalnie przygotowany dla Raspberry Pi 3\cite{rpi3:2016:datasheet}\footnote{\url{http://docs-europe.electrocomponents.com/webdocs/14ba/0900766b814ba5fd.pdf}}. Zasilany przez 5V ładowarkę np. telefoniczną. Taką konfigurację posiada nasz serwer, który obsługuję  aplikację webową.
 \hspace{2cm}
 \begin{figure}[h]
 \centering
@@ -643,7 +662,7 @@ Mikrokomputer wyposażony w czterordzeniowy procesor ARM, 1 GB RAM, porty USB or
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%       podrozdział 4.3          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Komunikacja}
-Raspberry Pi 3 i Esp8266 komunikują się ze sobą za pomocą pomocą JSON'ów. Gdy klient postawowi włączyć/wyłączyć urządzenie za pomocą ESP wywołuje funkcje na RPI 3 "swiatloon" lub "swiatlooff". Obie funkcje działają w identyczny sposób,  jedyną rożnicą jest wartosć pola "stan1" dla GPIO ESP generowanego JSONa. Funkcja "swiatloon" wygląda następująco:
+Raspberry Pi 3 i Esp8266 komunikują się ze sobą za pomocą JSON'ów. Gdy klient postawowi włączyć/wyłączyć urządzenie za pomocą ESP wywołuje funkcje na RPI 3 "swiatloon" lub "swiatlooff". Obie funkcje działają w identyczny sposób,  jedyną rożnicą jest wartosć pola "stan1" dla GPIO ESP generowanego JSONa. Funkcja "swiatloon" wygląda następująco:
 \begin{lstlisting} [style=py] 
 def swiatloon(idd):
     esp = session.query(Esp).filter(Esp.id ==int(idd)).one()
@@ -728,50 +747,22 @@ def readjson():
 
 Sieć Internetu Rzeczy i same urządzenia przetwarzają dane o naszej codziennej aktywności dobowej, np. kiedy włączamy światło. Po dłuższej analizie takich zachowań określić, czy jesteśmy w domu, na jak długo go opuszczamy lub kiedy do niego wracamy. Informacje takie jeśli dostaną się w niepowołane ręce mogą posłużyć do fizycznego włamania do naszego mieszkania.
 
-Każde urządzenie w naszej sieci Internetu Rzeczy może być potencjalnym punktem włamania do infrastruktury IOT i ujawnieniem wrażliwych danych. Poprawą bezpieczeństwa może pomóc nam Blockchain. Technologia ta opiera się o sieć peer-to-peer. Czynności odbioru lub nadaniu danych przez urządzenie jest rozgłaszane w sieci przez co klienci rejestrują je w swoich blokach i zapisują w księdze transakcji. Bloki takich informacji zostają zapieczętowane. Do zapieczętowania wykorzystywane są poprzednie bloki, dzięki czemu próba manipulacji na jednym bloku powoduję dezintegrację całości.
+Każde urządzenie w naszej sieci Internetu Rzeczy może być potencjalnym punktem włamania do infrastruktury IOT i ujawnieniem wrażliwych danych. Poprawą bezpieczeństwa może pomóc nam Blockchain\cite{blockchain:2017:blockchain}\cite{blockchain:2018:intel}. Technologia ta opiera się o sieć peer--to--peer. Czynności odbioru lub nadaniu danych przez urządzenie jest rozgłaszane w sieci przez co klienci rejestrują je w swoich blokach i zapisują w księdze transakcji. Bloki takich informacji zostają zapieczętowane. Do zapieczętowania wykorzystywane są poprzednie bloki, dzięki czemu próba manipulacji na jednym bloku powoduję dezintegrację całości.
 \begin{figure}[h]
 \includegraphics[width=1\textwidth]{JPG/blocks.jpg}
 \caption{Pieczętowanie bloków}
 \end{figure}
 
-Wykorzystanie technologii Blockchain w sieci IOT ogranicza ryzyko włamań przez redukcję centralnych systemów autoryzacji, łatwą weryfikację danych oraz niezmienność.
-
-zródło obrazku 4,4\footnote{\url{https://www.pluralsight.com/guides/blockchain-architecture}}
-
-do bibliografii\footnote{\url{https://www.intel.pl/content/www/pl/pl/it-managers/the-benefits-of-blockchain-iot-biot.html}}
-
-do bibliografii\footnote{\url{https://www.ibm.com/blogs/blockchain/2018/01/why-blockchain-and-iot-are-best-friends/}}
-
-do bibliografii\footnote{\url{https://blog.kurasinski.com/2017/07/czym-jest-do-cholery-blockchain/}}
-
+Wykorzystanie technologii Blockchain\cite{blockchain:2018:ibm} w sieci IOT ogranicza ryzyko włamań przez redukcję centralnych systemów autoryzacji, łatwą weryfikację danych oraz niezmienność.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%         zakończenie         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \summary
-tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst
-tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst
+Założeniem projektu było stworzenie aplikacji prostej w obsłudze oraz systemu czujników do kontrolowania przepływu prądu. Cele, ktróre założyliś przy projektowaniu sytemu  zostały przez nas osiągnięte, jedynie co wymaga poprawy to bezpieczeństwo  komunikacji przy wymianie danych między serwerem a czujnikiem oraz jeszcze prostrza konfiguracja połączenia ESP z siecią lokalą. 
 
-tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst
-tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%         załączniki (opcjonalnie):         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix
-\chapter{Tytuł załącznika jeden}
-
-Treść załącznika jeden.
-
-\chapter{Tytuł załącznika dwa}
-
-Treść załącznika dwa.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%          literatura (obowiązkowo):        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{unsrt}
 \bibliography{xml}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%       spis tabel (jeżeli jest potrzebny):     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\listoftables
-
-%%%%%%%%%%%%%%%%%%%%%%%%%    spis rysunków (jeżeli jest potrzebny):    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \listoffigures
 
 \oswiadczenie
